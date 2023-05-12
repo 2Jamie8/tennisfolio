@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TENNIS FOLIO</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+  <script>
+    window.onload = function(){
+        var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        });
+//------------------------------------------------
+        let meun = document.querySelector('.gnb');
+        let depth02 = meun.querySelectorAll('.depth02');
+        let innername = document.getElementsByClassName('inner')[0];
+        let inner_bg = document.getElementsByClassName('inner_bg')[0];
+
+        depth02.forEach(function(item02){
+            item02.style.display = 'none'
+        })
+
+        meun.onclick = function(){
+            for(let i = 0; i < depth02.length; i++){
+                if(depth02[i].style.display == 'none'){
+                    depth02.forEach(function(item02){
+                    item02.style.display = 'block'
+                    })
+                    innername.classList.add('inner_bg');
+                }else{
+                    depth02.forEach(function(item02){
+                    item02.style.display = 'none'
+                    })
+                    innername.classList.remove('inner_bg');
+                }
+            }
+        }//meun.onclick
+//-------------------------------------------------------
+        let menu_open = document.getElementsByClassName('mobile')[0];
+        let menu_nav = document.getElementById('menu_nav');
+        let menu_close = document.getElementsByClassName('menu_close')[0];
+        let bodyTag = document.getElementsByTagName('body')[0];
+        let body_bg = document.getElementsByClassName('body_bg')[0];
+
+        menu_open.onclick = function(){
+                if(menu_nav.style.display = 'none'){
+                    menu_nav.style.display = 'block';
+                    bodyTag.classList.add('body_bg');
+                }
+            }//menu_open.onclick
+        menu_close.onclick = function(){
+                if(menu_nav.style.display = 'block'){
+                    menu_nav.style.display = 'none';
+                    bodyTag.classList.remove('body_bg');
+                }
+            }//menu_close.onclick
+//------------------------------------------------------
+        let menu_depth01 = document.getElementsByClassName('menu_depth01');
+        let menu_depth02 = document.getElementsByClassName('menu_depth02');
+
+        for(let i = 0; i < menu_depth02.length; i++){
+                console.log(menu_depth02[i]);
+                menu_depth02[i].style.display ='none';
+            }
+        
+            for(let i = 0; i < menu_depth01.length; i++){
+                console.log(menu_depth01[i].children);
+
+                let depth02Children = menu_depth01[i].children[1];
+
+                menu_depth01[i].onclick = function(){
+                    if(depth02Children.style.display == 'none'){
+                        depth02Children.style.display = 'block';
+                    }
+                    else{depth02Children.style.display = 'none'}
+                }//menu_depth01[i].onclick
+            }
+//-------------------------------------------------------
+        var swiper = new Swiper(".cont01_swiper", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                414: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                },
+                580: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                },
+                850: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                },
+                1024: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+                },
+                    
+            },
+            });
+//--------------------------------------------------------
+        let cont04 = document.getElementsByClassName('cont04')[0];
+        let cont04_inner = cont04.getElementsByClassName('inner')[0];
+        let cont04_menu = cont04_inner.getElementsByClassName('menu')[0];
+        let cont04_btn = cont04_menu.getElementsByClassName('btn');
+        let cont04_list = cont04_inner.getElementsByClassName('list_A');
+
+        for(let i = 0; i < cont04_btn.length; i++){
+            cont04_btn[i].onclick = function(){
+                cont04_list[0].classList.remove('on');
+                cont04_list[1].classList.remove('on');
+                cont04_list[2].classList.remove('on');
+                cont04_list[3].classList.remove('on');
+                cont04_list[4].classList.remove('on');
+                cont04_list[5].classList.remove('on');
+
+                cont04_list[i].classList.add('on');
+
+                cont04_btn[0].classList.remove('on');
+                cont04_btn[1].classList.remove('on');
+                cont04_btn[2].classList.remove('on');
+                cont04_btn[3].classList.remove('on');
+                cont04_btn[4].classList.remove('on');
+                cont04_btn[5].classList.remove('on');
+
+                cont04_btn[i].classList.add('on');
+            }
+        }
+    }//window.onload
+  </script>
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <div class="pc top">
+                <ul class="top_list">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul><!-- .top_list end -->
+            </div><!-- .top end -->
+            <div class="bottom">
+                <h1>
+                    <a href="#">
+                        <img src="img/logo.svg" alt="logo"/>
+                    </a>
+                </h1>
+                <nav>
+                    <ul class="pc gnb">
+                        <li class="depth01">
+                            <a href="#">소개</a>
+                        </li><!-- .depth01 end -->
+                        <li class="depth01">
+                            <a href="#">커뮤니티</a>
+                            <ul class="depth02">
+                                <li><a href="#">SNS</a></li>
+                                <li><a href="#">콘텐츠</a></li>
+                                <li><a href="#">질문답변</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li><!-- .depth01 end -->
+                        <li class="depth01">
+                            <a href="#">스토어</a>
+                        </li><!-- .depth01 end -->
+                        <li class="depth01">
+                            <a href="#">베스트</a>
+                            <ul class="depth02">
+                                <li><a href="#">실시간</a></li>
+                                <li><a href="#">누적</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li><!-- .depth01 end -->
+                        <li class="depth01">
+                            <a href="#">카테고리</a>
+                            <ul class="depth02">
+                                <li><a href="#">ALL</a></li>
+                                <li><a href="#">가방</a></li>
+                                <li><a href="#">테니스용품</a></li>
+                                <li><a href="#">라켓</a></li>
+                                <li><a href="#">여성의류</a></li>
+                                <li><a href="#">남성의류</a></li>
+                                <li><a href="#">패션잡화</a></li>
+                                <li><a href="#">신발</a></li>
+                                <li><a href="#">브랜드</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li><!-- .depth01 end -->
+                    </ul><!-- .gnb end -->
+                </nav>
+                <div class="icon">
+                    <figure>
+                        <a href="#"><img src="img/icon_Search.png" alt="search"/></a>
+                        <div class="search">
+                            <input type="text" placeholder="검색해주세요."/>
+                            <button class="btn"><img src="img/icon_Search.png" alt=""/></button>
+                        </div>
+                    </figure>
+                    <figure>
+                        <a href="#"><img src="img/icon_share.png" alt="share"/></a>
+                        <div class="share">
+                            <a href="#"><img src="img/share01.png" alt=""/></a>
+                            <a href="#"><img src="img/share02.png" alt=""/></a>
+                            <a href="#"><img src="img/share03.png" alt=""/></a>
+                            <a href="#"><img src="img/share04.png" alt=""/></a>
+                            <a href="#"><img src="img/share05.png" alt=""/></a>
+                        </div>
+                    </figure>
+                    <figure class="mobile">
+                        <img src="img/icon_menu.png" alt="menu"/>
+                    </figure>
+                </div><!-- .icon end -->
+                <nav id="menu_nav">
+                    <div class="menu_inner">
+                        <div class="sitemap">
+                            <p>SITEMAP</p>
+                        </div>
+                        <div class="menu_close">
+                            <img src="img/icon_close.png" alt="close"/>
+                        </div>
+                    </div>
+                    <ul>
+                        <li class="menu_depth01">
+                            <a href="#">소개</a>
+                        </li><!-- .depth01 end -->
+                        <li class="menu_depth01">
+                            <a href="#">커뮤니티</a>
+                            <ul class="menu_depth02">
+                                <li><a href="#">SNS</a></li>
+                                <li><a href="#">콘텐츠</a></li>
+                                <li><a href="#">질문답변</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li><!-- .depth01 end -->
+                        <li class="menu_depth01">
+                            <a href="#">스토어</a>
+                        </li><!-- .depth01 end -->
+                        <li class="menu_depth01">
+                            <a href="#">베스트</a>
+                            <ul class="menu_depth02">
+                                <li><a href="#">실시간</a></li>
+                                <li><a href="#">누적</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li><!-- .depth01 end -->
+                        <li class="menu_depth01">
+                            <a href="#">카테고리</a>
+                            <ul class="menu_depth02">
+                                <li><a href="#">ALL</a></li>
+                                <li><a href="#">가방</a></li>
+                                <li><a href="#">테니스용품</a></li>
+                                <li><a href="#">라켓</a></li>
+                                <li><a href="#">여성의류</a></li>
+                                <li><a href="#">남성의류</a></li>
+                                <li><a href="#">패션잡화</a></li>
+                                <li><a href="#">신발</a></li>
+                                <li><a href="#">브랜드</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li><!-- .depth01 end -->
+                    </ul>
+                </nav><!-- .menu_nav end -->
+            </div><!-- .bottom end -->
+        </div><!-- .inner end -->
+    </header>
+    <main>
+        <section class="main_visual">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="img/main/main01.png" alt="main01"/>
+                        <div>
+                            <p>지금 입기 좋은<br/>테니스 룩</p>
+                            <a href="#">자세히 보기</a>
+                        </div>
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="img/main/main02.jpg" alt="main02"/>
+                        <div>
+                            <p>on the court<br/>코트 위 순간들</p>
+                            <a href="#">자세히 보기</a>
+                        </div>
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="img/main/main03.jpg" alt="main03"/>
+                        <div>
+                            <p>테니스를 위한<br/>TENNIS STYLE</p>
+                            <a href="#">자세히 보기</a>
+                        </div>
+                    </figure>
+                </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="cont01">
+            <div class="text">
+                <h2>SNS</h2>
+                <figure>
+                    <a href="#"><img src="img/icon_plus.png" alt=""/></a>
+                </figure>
+            </div>
+            <div class="inner">
+                <div class="list">
+                    <div class="text">
+                        <div>
+                            <h3>테니스 칠때 뭐 입지?<br/>관심 있는 스타일을 찾아보세요.</h3>
+                            <p>로그인 하시면 취향에 맞는 스타일을<br/>확인하실 수 있어요.</p>
+                        </div>
+                        <figure>
+                            <img src="img/logo.svg" alt=""/>
+                        </figure>
+                    </div>
+                    <!-- Swiper -->
+                    <div class="swiper cont01_swiper">
+                        <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="#">
+                            <figure>
+                                <img src="img/sns/sns01.jpg" alt=""/>
+                            </figure>
+                            <div>
+                                <div class="name">
+                                    <img src="img/sns/sns01.jpg" alt=""/>
+                                    <p>miniellie_</p>
+                                </div>
+                                <div class="smile">
+                                    <img src="img/icon_smile.png" alt=""/>
+                                    <p>37</p>
+                                </div>
+                            </div>
+                            <h4>무서운 테니스 실력의 소유자 (남들이 볼까 무서운...^^) 인스타그램 (@miniellie)</h4>
+                            <p>실외 · 서울 · 기타 · ENTP · OOTD · 캐주얼 · 러블리 · 셋업 · S/S · 여자</p>
+                            <div class="tag">
+                                <span>#내곡동</span>
+                            </div>
+                        </div></a>
+                        <div class="swiper-slide"><a href="#">
+                            <figure>
+                                <img src="img/sns/sns02.jpeg" alt=""/>
+                            </figure>
+                            <div>
+                                <div class="name">
+                                    <img src="img/sns/sns02-1.jpeg" alt=""/>
+                                    <p>지니</p>
+                                </div>
+                                <div class="smile">
+                                    <img src="img/icon_smile.png" alt=""/>
+                                    <p>31</p>
+                                </div>
+                            </div>
+                            <h4>찐 외향형 ENFJ는 크리스마스를 놓칠 수 없어요🔥 클럽에서 크리스마스 기념으로 산타 코스튬을 입고 쳤어요🥰 내년에 같이 즐길 테린이구해요👼🏻💓</h4>
+                            <p>실외 · 서울 · 기타 · ENFJ · 셋업 · 동호회 · 라켓 · 테니스용품 · 160cm · 남여공용</p>
+                            <div class="tag">
+                                <span>#내곡동</span>
+                                <span>#테린이</span>
+                                <span>#테이비</span>
+                                <span>#테니스웨어</span>
+                                <span>#크리스마스</span>
+                            </div>
+                        </div></a>
+                        <div class="swiper-slide"><a href="#">
+                            <figure>
+                                <img src="img/sns/sns03.jpg" alt=""/>
+                            </figure>
+                            <div>
+                                <div class="name">
+                                    <img src="img/sns/sns03.jpg" alt=""/>
+                                    <p>flowerchobi</p>
+                                </div>
+                                <div class="smile">
+                                    <img src="img/icon_smile.png" alt=""/>
+                                    <p>30</p>
+                                </div>
+                            </div>
+                            <h4>무서운 테니스 실력의 소유자 (남들이 볼까 무서운...^^) 인스타그램 (@miniellie)</h4>
+                            <p>실외 · 서울 · 러브포티 · ENTP · OOTD · 캐주얼 · 스포티 · 러블리 · 스커트 · S/S · 테니스웨어 · 여자</p>
+                            <div class="tag">
+                                <span>#내곡동</span>
+                            </div>
+                        </div></a>
+                        <div class="swiper-slide"><a href="#">
+                            <figure>
+                                <img src="img/sns/sns04.png" alt=""/>
+                            </figure>
+                            <div>
+                                <div class="name">
+                                    <img src="img/sns/sns04.png" alt=""/>
+                                    <p>tennis_nrnr</p>
+                                </div>
+                                <div class="smile">
+                                    <img src="img/icon_smile.png" alt=""/>
+                                    <p>27</p>
+                                </div>
+                            </div>
+                            <h4>귀요미 탈 빌려서 한컷 대박🙈💜 인스타그램(@tennis_nrnr)</h4>
+                            <p>실외 · 서울 · 기타 · OOTD · 캐주얼 · 러블리 · S/S · 여자</p>
+                            <div class="tag">
+                                <span>#ts</span>
+                            </div>
+                        </div></a>
+                        <div class="swiper-slide"><a href="#">
+                            <figure>
+                                <img src="img/sns/sns05.jpg" alt=""/>
+                            </figure>
+                            <div>
+                                <div class="name">
+                                    <img src="img/sns/sns05-1.jpg" alt=""/>
+                                    <p>jhmintennis</p>
+                                </div>
+                                <div class="smile">
+                                    <img src="img/icon_smile.png" alt=""/>
+                                    <p>26</p>
+                                </div>
+                            </div>
+                            <h4>#지금도 못치고 그때도 못쳤다#테니스#그래도 재밌다인스타그램(@jhmin_tennis)</h4>
+                            <p>실외 · 서울 · 기타 · OOTD · 캐주얼 · 스포티 · 스커트 · S/S · 여자</p>
+                            <div class="tag">
+                                <span>#테린이</span>
+                                <span>#테생아</span>
+                                <span>#계남실내테니스장</span>
+                            </div>
+                        </div></a>
+                        <div class="swiper-slide"><a href="#">
+                            <figure>
+                                <img src="img/sns/sns06.jpg" alt=""/>
+                            </figure>
+                            <div>
+                                <div class="name">
+                                    <img src="img/sns/sns06-1.jpg" alt=""/>
+                                    <p>dal_sun</p>
+                                </div>
+                                <div class="smile">
+                                    <img src="img/icon_smile.png" alt=""/>
+                                    <p>24</p>
+                                </div>
+                            </div>
+                            <h4>OWN THE FlOOR 💜 나이키가 그랬지!! 자신감만 있으면 어디든 그곳이 우리의 무대라고 💃🏼😛😆 움직일때마다 화려하게 반짝이는 자동조명 ON 내 바지 💡 내 무대는 테니스는 못쳐도 테니스코트지 🎾💚😎🤣 인스타그램(@dal_sun)</h4>
+                            <p>실외 · 서울 · 나이키 · OOTD · 캐주얼 · 스포티 · 스트릿 · F/W · 여자</p>
+                            <div class="tag">
+                                <span>#ownthefloor</span>
+                            </div>
+                        </div></a>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                </div>
+        </section>
+        <section class="cont02">
+            <h2>요즘 핫해요</h2>
+            <div class="list">
+                <div class="item"><a href="#">
+                    <figure>
+                        <img src="img/hot01.png" alt=""/>
+                        <span>NEW</span>
+                    </figure>
+                    <div>
+                        <h4>라라스마일</h4>
+                        <h3>헬로 라라 멀티 보냉백 Yellow</h3>
+                        <strong>119,000</strong>
+                    </div>
+                </div></a>
+                <div class="item"><a href="#">
+                    <figure>
+                        <img src="img/hot02.jpg" alt=""/>
+                        <span>NEW</span>
+                    </figure>
+                    <div>
+                        <h4>러브포티</h4>
+                        <h3>로고 테니스 캡 Navy</h3>
+                        <strong>39,000</strong>
+                    </div>
+                </div></a>
+                <div class="item"><a href="#">
+                    <figure>
+                        <img src="img/hot03.jpg" alt=""/>
+                        <span>NEW</span>
+                    </figure>
+                    <div>
+                        <h4>논포멀하우스</h4>
+                        <h3>Stretch cotton polo shirt (Pink)</h3>
+                        <strong>76,000</strong>
+                    </div>
+                </div></a>
+                <div class="item"><a href="#">
+                    <figure>
+                        <img src="img/hot04.jpg" alt=""/>
+                        <span>NEW</span>
+                    </figure>
+                    <div>
+                        <h4>윌슨</h4>
+                        <h3>윌슨 핑크 테니스 볼</h3>
+                        <span>6,100↓</span>
+                        <strong>18,900</strong>
+                        <p>25,000</p>
+                    </div>
+                </div></a>
+                <div class="item"><a href="#">
+                    <figure>
+                        <img src="img/hot05.jpg" alt=""/>
+                        <span>NEW</span>
+                    </figure>
+                    <div>
+                        <h4>러브포티</h4>
+                        <h3>테니스 크루 캡 Ivory</h3>
+                        <strong>39,000</strong>
+                    </div>
+                </div></a>
+                <div class="item"><a href="#">
+                    <figure>
+                        <img src="img/hot06.jpg" alt=""/>
+                    </figure>
+                    <div>
+                        <h4>논포멀하우스</h4>
+                        <h3>코트 볼캡 Ivory</h3>
+                        <strong>36,000</strong>
+                    </div>
+                </div></a>
+                <div class="item"><a href="#">
+                    <figure>
+                        <img src="img/hot07.jpg" alt=""/>
+                        <span>NEW</span>
+                    </figure>
+                    <div>
+                        <h4>논포멀하우스</h4>
+                        <h3>Deuce wrap tennis skirt (Navy)</h3>
+                        <strong>132,000</strong>
+                    </div>
+                </div></a>
+                <div class="item"><a href="#">
+                    <figure>
+                        <img src="img/hot08.jpg" alt=""/>
+                        <span>NEW</span>
+                    </figure>
+                    <div>
+                        <h4>윌슨</h4>
+                        <h3>윌슨 롤랑가로스 백팩</h3>
+                        <span>21,000↓</span>
+                        <strong>59,000</strong>
+                        <p>80,000</p>
+                    </div>
+                </div></a>
+            </div>
+        </section>
+        <section class="cont03">
+            <h2>기획전</h2>
+            <div class="list">
+                <figure><a href="#">
+                    <img src="img/exhibition01.jpg" alt=""/>
+                </a></figure>
+                </a><figure><a href="#">
+                    <img src="img/exhibition02.png" alt=""/>
+                </a></figure>
+                <figure><a href="#">
+                    <img src="img/exhibition03.jpg" alt=""/>
+                </a></figure>
+                <figure><a href="#">
+                    <img src="img/exhibition04.png" alt=""/>
+                </a></figure>
+            </div>
+        </section>
+        <section class="cont04">
+            <div class="text">
+                <h2>카테고리별 인기 아이템</h2>
+                <figure>
+                    <a href="#"><img src="img/icon_plus.png" alt=""/></a>
+                </figure>
+            </div>
+            <div class="inner">
+                <div class="menu">
+                    <figure class="btn on">
+                        <img src="img/cont04_icon01.svg" alt="">
+                        <p>가방</p>
+                    </figure>
+                    <figure class="btn">
+                        <img src="img/cont04_icon02.svg" alt="">
+                        <p>테니스용품</p>
+                    </figure>
+                    <figure class="btn">
+                        <img src="img/cont04_icon03.svg" alt="">
+                        <p>라켓+신발</p>
+                    </figure>
+                    <figure class="btn">
+                        <img src="img/cont04_icon04.svg" alt="">
+                        <p>여성의류</p>
+                    </figure>
+                    <figure class="btn">
+                        <img src="img/cont04_icon05.svg" alt="">
+                        <p>남성의류</p>
+                    </figure>
+                    <figure class="btn">
+                        <img src="img/cont04_icon06.svg" alt="">
+                        <p>패션잡화</p>
+                    </figure>
+                </div>
+                <div class="list_A on">
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/가방/popularity01.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>러브포티</h4>
+                                    <h3>퀼팅 라켓 백 Black</h3>
+                                    <strong>89,000</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/가방/popularity02.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>퀼팅 라켓 토트백 Black</h3>
+                                        <strong>159,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/가방/popularity03.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>퀼팅 라켓 백팩 Navy</h3>
+                                        <strong>109,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/가방/popularity04.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>라켓 에코백 Khaki</h3>
+                                        <strong>59,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/가방/popularity05.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>윌슨</h4>
+                                        <h3>윌슨 롤랑가로스 백팩</h3>
+                                        <span>21,000↓</span>
+                                        <strong>59,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/가방/popularity010.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>러브포티</h4>
+                                    <h3>퀼팅 라켓 백팩 White</h3>
+                                    <span>21,000↓</span>
+                                    <strong>109,000</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/가방/popularity06.png" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>라라스마일</h4>
+                                        <h3>헬로 라라 멀티 보냉백 Yellow</h3>
+                                        <span>21,000↓</span>
+                                        <strong>119,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/가방/popularity07.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>퀼팅 라켓 토트백 Grey</h3>
+                                        <span>21,000↓</span>
+                                        <strong>159,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/가방/popularity08.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>라켓 토트백 Khaki</h3>
+                                        <span>21,000↓</span>
+                                        <strong>139,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/가방/popularity09.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>라켓 백 Navy</h3>
+                                        <span>21,000↓</span>
+                                        <strong>69,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_A">
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/테니스용품/popularity01.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>리치즈</h4>
+                                    <h3>220g 초경량 장우산 Deep green</h3>
+                                    <strong>75,000</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/테니스용품/popularity02.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>리치즈</h4>
+                                        <h3>220g 초경량 장우산 (Black)</h3>
+                                        <strong>75,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/테니스용품/popularity03.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>업스트림</h4>
+                                        <h3>로고 댐프너</h3>
+                                        <strong>20,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/테니스용품/popularity04.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>윌슨</h4>
+                                        <h3>윌슨 핑크 테니스 볼</h3>
+                                        <span>6,100↓</span>
+                                        <strong>18,900</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/테니스용품/popularity05.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>요넥스</h4>
+                                        <h3>폴리투어 에어 200M PTA 1.25mm Sky blue</h3>
+                                        <p>20%</p>
+                                        <strong>112,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_A">
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/라켓/popularity01.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>요넥스</h4>
+                                    <h3>2022 요넥스 라켓 이존 필(102sq/250g/16x18)</h3>
+                                    <p>10%</p>
+                                    <strong>234,000</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/라켓/popularity02.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>헤드</h4>
+                                        <h3>2022 헤드 라켓 붐 팀 L (107sq/260g/16x19)</h3>
+                                        <p>10%</p>
+                                        <strong>294,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/라켓/popularity03.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>윌슨</h4>
+                                        <h3>윌슨 울트라 100L (100sq/277g/16x19) 2017</h3>
+                                        <p>10%</p>
+                                        <strong>243,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/신발/popularity01.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>골스튜디오</h4>
+                                        <h3>그래비티 밸런스 PRO</h3>
+                                        <span>8,850↓</span>
+                                        <strong>50,150</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/신발/popularity02.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>나이키</h4>
+                                        <h3>나이키 테니스화 리액트 베이퍼 NXT-CV0724-002</h3>
+                                        <span>8,850↓</span>
+                                        <strong>189,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_A">
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/여성의류/popularity01.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>르누쿠</h4>
+                                    <h3>직조 라벨 반레깅스 Green blue</h3>
+                                    <strong>58,000</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/여성의류/popularity02.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>원포인트 아노락 Light green</h3>
+                                        <span>29,700↓</span>
+                                        <strong>69,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/여성의류/popularity03.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>원포인트 아노락 Light orange</h3>
+                                        <span>29,700↓</span>
+                                        <strong>69,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/여성의류/popularity04.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>르누쿠</h4>
+                                        <h3>세라 단가라 집업 니트 Navy</h3>
+                                        <span>29,700↓</span>
+                                        <strong>210,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/여성의류/popularity05.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>컨셉트컬리지</h4>
+                                        <h3>남여공용 올 블랙 풋볼 챔스 바시티 자켓</h3>
+                                        <span>29,700↓</span>
+                                        <strong>319,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/여성의류/popularity010.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>러브포티</h4>
+                                    <h3>스포티 원피스</h3>
+                                    <span>29,700↓</span>
+                                    <strong>94,000</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/여성의류/popularity06.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>르누쿠</h4>
+                                        <h3>아가일 니트 베스트 Burgundy</h3>
+                                        <span>29,700↓</span>
+                                        <strong>189,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/여성의류/popularity07.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>로고 티셔츠 Blue</h3>
+                                        <span>29,700↓</span>
+                                        <strong>45,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/여성의류/popularity08.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>논포멀하우스</h4>
+                                        <h3>스너그 테니스 스커트 White</h3>
+                                        <span>29,700↓</span>
+                                        <strong>128,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/여성의류/popularity09.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>로고 스커트 Grey</h3>
+                                        <span>29,700↓</span>
+                                        <strong>69,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_A">
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/남성의류/popularity01.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>FCMM</h4>
+                                    <h3>테니스 코트 인 티셔츠 Black</h3>
+                                    <span>11,700↓</span>
+                                    <strong>27,300</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/남성의류/popularity02.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>테니스 코트 인 티셔츠 White01</h3>
+                                        <span>11,700↓</span>
+                                        <strong>27,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/남성의류/popularity03.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>테니스 코트 인 티셔츠 White02</h3>
+                                        <span>11,700↓</span>
+                                        <strong>27,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/남성의류/popularity04.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>테니스 클럽 클래식 기모 후디 Black</h3>
+                                        <span>20,700↓</span>
+                                        <strong>48,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/남성의류/popularity05.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>테니스 클럽 클래식 기모 후디 Blue gray</h3>
+                                        <span>20,700↓</span>
+                                        <strong>48,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/남성의류/popularity010.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>FCMM</h4>
+                                    <h3>포시즌 시그니처 스트레치 쇼츠 Sky blue</h3>
+                                    <span>11,700↓</span>
+                                    <strong>47,300</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/남성의류/popularity06.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>테니스 클럽 클래식 기모 후디 Oil green</h3>
+                                        <span>20,700↓</span>
+                                        <strong>48,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/남성의류/popularity07.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>테니스 클럽 클래식 기모 후디 Butter</h3>
+                                        <span>20,700↓</span>
+                                        <strong>48,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/남성의류/popularity08.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>테니스 클럽 클래식 기모 후디 Melange gray</h3>
+                                        <span>20,700↓</span>
+                                        <strong>48,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/남성의류/popularity09.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>포시즌 시그니처 스트레치 쇼츠 Black</h3>
+                                        <span>11,700↓</span>
+                                        <strong>27,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_A">
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/패션잡화/popularity01.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>FCMM</h4>
+                                    <h3>테니스 그라운드 커버 볼캡 White</h3>
+                                    <span>11,700↓</span>
+                                    <strong>27,300</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/패션잡화/popularity02.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>로고 테니스 캡 Brown</h3>
+                                        <span>11,700↓</span>
+                                        <strong>39,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/패션잡화/popularity03.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>테니스 그라운드 썬캡 Black</h3>
+                                        <span>11,700↓</span>
+                                        <strong>39,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/패션잡화/popularity04.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>FCMM</h4>
+                                        <h3>테니스 그라운드 썬캡 white</h3>
+                                        <span>11,700↓</span>
+                                        <strong>39,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/패션잡화/popularity05.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>르누쿠</h4>
+                                        <h3>누쿠로고 양말 Black</h3>
+                                        <span>11,700↓</span>
+                                        <strong>15,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="item01">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/패션잡화/popularity010.jpg" alt=""/>
+                                </figure>
+                                <div>
+                                    <h4>러브포티</h4>
+                                    <h3>테니스 크루 선캡 Green</h3>
+                                    <span>11,700↓</span>
+                                    <strong>39,000</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item01">
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/패션잡화/popularity06.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>러브포티</h4>
+                                        <h3>테니스 크루 선캡 Burgundy</h3>
+                                        <span>11,700↓</span>
+                                        <strong>39,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/패션잡화/popularity07.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>나이키</h4>
+                                        <h3>손목밴드 스우시 2개입 Pink</h3>
+                                        <p>5%</p>
+                                        <strong>13,300</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/패션잡화/popularity08.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>논포멀하우스</h4>
+                                        <h3>코트 볼캡 Ivory</h3>
+                                        <p>5%</p>
+                                        <strong>36,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item02">
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/패션잡화/popularity09.jpg" alt=""/>
+                                    </figure>
+                                    <div>
+                                        <h4>논포멀하우스</h4>
+                                        <h3>코트 볼캡 Navy</h3>
+                                        <p>5%</p>
+                                        <strong>36,000</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cont05">
+            <div class="item">
+                <figure>
+                    <a href="#"><img src="img/content01.jpg" alt=""/></a>
+                </figure>
+                <a href="#"><div class="text">
+                    <h3>Tennis Tour</h3>
+                    <p>테니스와 함께하는 해외여행</p>
+                </div></a>
+            </div>
+            <div class="item">
+                <figure>
+                    <a href="#"><img src="img/content02.jpg" alt=""/></a>
+                </figure>
+                <a href="#"><div class="text">
+                    <h3>Good Place</h3>
+                    <p>테니스코트가 있는 국내 숙소</p>
+                </div></a>
+            </div>
+        </section>
+        <section class="cont06">
+            <div class="text">
+                <h2>취향저격! 요즘 테니스</h2>
+                <figure>
+                    <a href="#"><img src="img/icon_plus.png" alt=""/></a>
+                </figure>
+            </div>
+            <div class="inner">
+                <div class="list">
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/content03.jpg" alt=""/>
+                            </figure>
+                            <h4>테린이 환영해! 테니스 준비과정 비용정리</h4>
+                            <p>실외 · 서울 · 나이키 · 테린이</p>
+                            <div class="tag">
+                                <span>#테린이</span>
+                                <span>#테니스준비과정</span>
+                                <span>#테니스 시작</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/content04.jpg" alt=""/>
+                            </figure>
+                            <h4>테니스코트가 있는 숙소</h4>
+                            <p>실외 · 서울 · 나이키 · 스포티 · 라켓</p>
+                            <div class="tag">
+                                <span>#테니스코트</span>
+                                <span>#숙소</span>
+                                <span>#전국</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/content05.jpg" alt=""/>
+                            </figure>
+                            <h4>이색적인 테니스 코트를 찾아서:보라색 코트</h4>
+                            <p>실외 · 서울 · 나이키 · 스포티 · 동호회</p>
+                            <div class="tag">
+                                <span>#보라색</span>
+                                <span>#테니스코트</span>
+                                <span>#테니스</span>
+                                <span>#명소</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/content06.jpg" alt=""/>
+                            </figure>
+                            <h4>테니스 영화</h4>
+                            <p>실외 · 서울 · 나이키 · 빈티지</p>
+                            <div class="tag">
+                                <span>#테니스</span>
+                                <span>#영화</span>
+                                <span>#드라마</span>
+                                <span>#애니메이션</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cont07">
+            <div class="text">
+                <h2>질문있어요</h2>
+                <figure>
+                    <a href="#"><img src="img/icon_plus.png" alt=""/></a>
+                </figure>
+            </div>
+            <div class="inner">
+                <div class="list">
+                    <div class="item">
+                        <div class="text01">
+                            <span>테린이</span>
+                            <h5>테니스 레슨 비용</h5>
+                        </div>
+                        <div class="text02">
+                            <p>테니스 이제 시작하는 테린이인데 혹시 레슨 비용 어느정도가 적당한가요? 너무 천차만별이라서요</p>
+                        </div>
+                        <div class="text03">
+                            <div class="img">
+                                <div>
+                                    <img src="img/icon_eye.png" alt=""/>
+                                    <h6>0</h6>
+                                </div>
+                                <div>
+                                    <img src="img/icon_Bubbles.png" alt=""/>
+                                    <h6>4</h6>
+                                </div>
+                            </div>
+                            <div class="answer">
+                                <p>답변하기</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="text01">
+                            <span>기타</span>
+                            <h5>테니스 유행이 조금 사그라든 느낌</h5>
+                        </div>
+                        <div class="text02">
+                            <p>언제부터인가 테니스치는 사람들이 많이 있고 만나면 이야기도 많이 했는데 어느 순간 다 빠진 느낌이라서 아쉬워여ㅜ</p>
+                        </div>
+                        <div class="text03">
+                            <div class="img">
+                                <div>
+                                    <img src="img/icon_eye.png" alt=""/>
+                                    <h6>0</h6>
+                                </div>
+                                <div>
+                                    <img src="img/icon_Bubbles.png" alt=""/>
+                                    <h6>8</h6>
+                                </div>
+                            </div>
+                            <div class="answer">
+                                <p>답변하기</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="text01">
+                            <span>기타</span>
+                            <h5>오늘은 날이 좋네</h5>
+                        </div>
+                        <div class="text02">
+                            <p>휴일만 되면 비오고 출근하는 날 거짓말 같이 날씨가 좋아진다...</p>
+                        </div>
+                        <div class="text03">
+                            <div class="img">
+                                <div>
+                                    <img src="img/icon_eye.png" alt=""/>
+                                    <h6>0</h6>
+                                </div>
+                                <div>
+                                    <img src="img/icon_Bubbles.png" alt=""/>
+                                    <h6>9</h6>
+                                </div>
+                            </div>
+                            <div class="answer">
+                                <p>답변하기</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="item">
+                        <div class="text01">
+                            <span>동호회</span>
+                            <h5>광진구 성수,건대 쪽 돟호회있나요?</h5>
+                        </div>
+                        <div class="text02">
+                            <p>구력은 2년차 정도되는데 지인이랑 치다가 지인이 다른 지역으로 이사가서 동호회에 들어가서 함께 테니스치고싶네요</p>
+                        </div>
+                        <div class="text03">
+                            <div class="img">
+                                <div>
+                                    <img src="img/icon_eye.png" alt=""/>
+                                    <h6>1</h6>
+                                </div>
+                                <div>
+                                    <img src="img/icon_Bubbles.png" alt=""/>
+                                    <h6>13</h6>
+                                </div>
+                            </div>
+                            <div class="answer">
+                                <p>답변하기</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="text01">
+                            <span>기타</span>
+                            <h5>굵직한 테니스 대회들 알려주세요!</h5>
+                        </div>
+                        <div class="text02">
+                            <p>올해는 테니스 대회가서 직관하고 싶은데 추천해주세용</p>
+                        </div>
+                        <div class="text03">
+                            <div class="img">
+                                <div>
+                                    <img src="img/icon_eye.png" alt=""/>
+                                    <h6>1</h6>
+                                </div>
+                                <div>
+                                    <img src="img/icon_Bubbles.png" alt=""/>
+                                    <h6>9</h6>
+                                </div>
+                            </div>
+                            <div class="answer">
+                                <p>답변하기</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="text01">
+                            <span>코트</span>
+                            <h5>테니스 엘보우...</h5>
+                        </div>
+                        <div class="text02">
+                            <p>테니스칠 때 조심해야 할 것 같아요 이게 몇 번째인지 다친 곳만 계속 다치고 아프니에요..</p>
+                        </div>
+                        <div class="text03">
+                            <div class="img">
+                                <div>
+                                    <img src="img/icon_eye.png" alt=""/>
+                                    <h6>0</h6>
+                                </div>
+                                <div>
+                                    <img src="img/icon_Bubbles.png" alt=""/>
+                                    <h6>4</h6>
+                                </div>
+                            </div>
+                            <div class="answer">
+                                <p>답변하기</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <figure>
+                        <img src="img/logo.svg" alt=""/>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="list01">
+            <div class="item01">
+                <p>고객센터</p>
+                <h3><a href="tel : 02-3453-3737"></a>02-3453-3737</h3>
+                <span>평일 10:00 ~ 19:00 (주말 & 공휴일 휴무)</span>
+                <span>13:00 ~ 14:00 (점심시간)</span>
+            </div>
+            <div class="item02">
+                <h4>테니스폴리오 소개</h4>
+                <img src="img/icon_arrows(right)_b.png" alt=""/>
+                <h5>테니스로 하나되는 이곳, 테니스폴리오</h5>
+                <figure>
+                    <img src="img/테니스폴리오 소개.svg" alt=""/>
+                </figure>
+            </div>
+            <div class="item02">
+                <h4>입점문의</h4>
+                <img src="img/icon_arrows(right)_b.png" alt=""/>
+                <h5>입점을 희망하신다면 이곳에 문의해주세요.</h5>
+                <figure>
+                    <img src="img/입점문의.svg" alt=""/>
+                </figure>
+            </div>
+        </section>
+        <section class="list02">
+            <div class="item01">
+                <span>(주)마일리</span>
+                <span>대표 : 임보영  ㅣ  사업자등록번호 :  269-88-02172</span>
+                <span>주소 : 서울시 강남구 선릉로 82길 15, 4층</span>
+            </div>
+            <div class="item01">
+                <span>전화번호 : 02-3453-3737 ㅣ 이메일 :  milely@tennisfolio.com</span>
+                <span>통신판매업신고 : 제2022-서울강남-06040 호</span>
+                <span>개인정보 보호책임자 : 장하일  ㅣ  호스팅서비스 : 카페24</span>
+            </div>
+            <div class="item02">
+                <p>1:1문의</p>
+                <p>이용약관</p>
+                <p>개인정보처리방침</p>
+            </div>
+        </section>
+        <section class="list03">
+            <div class="item01">
+                <p>(주)마일리는 고객님의 안전거래를 위해 현금결제 금액에 대해 토스페이먼츠와 계약을 체결하여 안전거래를 보장하고 있습니다.</p>
+                <span>서비스가입사실확인</span>
+                <p>(주)마일리는 통신판매중개자로서 중개하는 거래에 대하여 책임을 부담하지 않습니다. 단, 마일리가 판매자로 등록 판매한 상품은 판매자로서 책임을 부담합니다.</p>
+                <p>ⓒ 2022 마일리.</p>
+            </div>
+            <div class="item02">
+                <div>
+                    <p>공지사항</p>
+                    <img src="img/icon_arrows(right)_b.png" alt=""/>  
+                </div>
+                <div>
+                    <p>자주묻는질문</p>
+                    <img src="img/icon_arrows(right)_b.png" alt=""/>  
+                </div>
+                <figure>
+                    <img src="img/icon_insta.svg" alt=""/>
+                    <img src="img/icon_kakao.svg" alt=""/>
+                    <img src="img/icon_youtube.svg" alt=""/>
+                </figure>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
