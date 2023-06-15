@@ -807,7 +807,7 @@ main .cont04 .inner .menu {
     margin-bottom: 50px;
 }
 main .cont04 .inner .menu .btn {
-    width: 100px;
+    width: calc(100% /  6 - 30px);
     text-align: center;
 }
 main .cont04 .inner .menu .btn img {
